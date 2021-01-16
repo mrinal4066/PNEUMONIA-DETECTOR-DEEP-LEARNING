@@ -1,0 +1,594 @@
+<!doctype html>
+<html>
+<head>
+    
+    
+    
+    
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>xray</title>
+   <script src="https://use.fontawesome.com/9eb89a2e6e.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     
+     
+   
+   <style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{url_for('static',filename='myno.jpg')}}');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text h1{
+	font-size: 42px;
+}
+.hero-text p{
+	font-size: 55px;
+	font-weight: bold;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #555;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #f7f7f7;
+  color: green;
+}
+.snd2s{
+	margin-top: 35px;
+	box-sizing: border-box;
+	margin-bottom: 35px;
+
+}
+.snd2s h2{
+	font-size: 72px;
+	font-weight: bold;
+}
+.avatar-pic {
+width: 440px;
+height: 560px;
+}
+img{
+  max-width:400px;
+	max-height: 400px
+}
+input[type=file]{
+padding:10px;
+background:#2d2d2d;}
+.btnmrg{
+	margin-top: 80px;
+	margin-bottom: auto;
+}
+.frm{
+margin-top:120px;;
+}
+.site-footer {
+  background: #292b2c;
+}
+.mg-crd{
+margin-top:40px;
+}
+.hgset{
+  width: 100%;
+  height: 100%;
+
+}
+
+
+
+
+/*FOOTER*/
+
+footer {
+  background: #16222A;
+  background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+  background: linear-gradient(59deg, #3A6073, #16222A);
+  color: white;
+  margin-top:100px;
+}
+
+footer a {
+  color: #fff;
+  font-size: 14px;
+  transition-duration: 0.2s;
+}
+
+footer a:hover {
+  color: #FA944B;
+  text-decoration: none;
+}
+
+.copy {
+  margin:10px;
+  font-size: 12px;
+  padding: 10px;
+  border-top: 1px solid #FFFFFF;
+}
+
+.footer-middle {
+  padding-top: 2em;
+  color: white;
+}
+
+
+/*SOCİAL İCONS*/
+
+/* footer social icons */
+
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+
+
+/* footer social icons */
+
+.social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+
+.social-network a.icoLinkedin:hover {
+  background-color: #007bb7;
+}
+.social-network a.icoTwitter:hover {
+  background-color: #007bb7;
+}
+.social-network a.icoGithub:hover {
+  background-color: #0a0a0a;
+}
+
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoTwitter:hover i,
+.social-network a.icoGithub:hover i,
+.social-network a.icoLinkedin:hover i {
+  color: #fff;
+}
+
+.social-network a.socialIcon:hover,
+.socialHoverClass {
+  color: #44BCDD;
+}
+
+
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.social-circle li i {
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.social-circle i {
+  color: #595959;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.social-network a {
+  background-color: #F9F9F9;
+}
+.ovh {
+  height: 300px;
+  overflow: scroll;
+}
+
+
+
+</style>
+   
+   
+   
+   
+</head>
+
+<body> 
+
+<div class="bgimg">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand text-warning font-weight-bold" href="#">PNEUMONIA DETECTOR</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-center" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a  class="nav-link text-white" href="/">HOME </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#sectionabt">ABOUT</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link text-white" href="#sectionadv">ADVICE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#sectionprd">PREDICT</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#sectioncon">CONTACT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+ {% if prediction==NULL %}
+  <div class="hero-image">
+  <div class="hero-text">
+       
+           <h1 style="font-size:40px" class="text-warning">WELCOME!!</h1>
+        <p class="text-warning">DETECT PNEUMONIA</p>
+      <button class="btn btn-warning text-warning font-weight-bold" onclick="window.location.href='#sectionprd'">Predict
+      </button>               
+  </div>
+</div>
+
+<!-----------card----->
+<!----------------space------->
+  <div id="sectionabt">
+<div class="container text-center snd2s">
+      <h2>ABOUT</h2>
+      
+
+    </div>
+ 
+
+<!-------------end--------->
+
+<!---------pneumonia info-------------->
+<div class="container ovh bg-dark" >
+<nav id="navbar-example2" class="navbar navbar-light bg-dark">
+  <a class="navbar-brand text-warning font-weight-bold" href="#">What is Pneumonia?</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link text-danger" href="#fat">Overview</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-danger" href="#mdo">sympotoms</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link text-danger" href="#one">Causes</a>
+    </li>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link text-danger" href="#two">Risk Factor</a>
+    </li>
+    
+  </ul>
+</nav>
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+  <h4 id="fat" class="text-danger">Overview</h4>
+  <p class="text-white">Pneumonia is an infection in one or both lungs. Bacteria, viruses, and fungi cause it.
+
+The infection causes inflammation in the air sacs in your lungs, which are called alveoli. The alveoli fill with fluid or pus, making it difficult to breathe.</p>
+  <h4 id="mdo" class="text-danger">Sympotoms of Pneumonia.</h4>
+  <p class="text-white">
+  <p class="text-white" >Pneumonia symptoms can be mild to life-threatening. They can include:</p>
+  <ul>
+  <li class="text-white">coughing that may produce phlegm (mucus)</li>
+  <li class="text-white">fever</li>
+  <li class="text-white">sweating or chills</li>
+  <li class="text-white">shortness of breath that happens while doing normal activities or even while resting</li>
+  <li class="text-white">chest pain that’s worse when you breathe or cough</li>
+  <li class="text-white">feelings of tiredness or fatigue</li>
+  <li class="text-white">loss of appetite</li>
+  <li class="text-white">nausea or vomiting</li>
+  <li class="text-white">headaches</li>
+</ul>
+  <p class="text-white" >Other symptoms can vary according to your age and general health:</p>
+
+ <ul class="text-white">
+  <li class="text-white">Children under 5 years old may have fast breathing or wheezing.</li>
+  <li class="text-white">Infants may appear to have no symptoms, but sometimes they may vomit, lack energy, or have trouble drinking or eating.
+</li>
+  <li class="text-white">Older people may have milder symptoms. They can also exhibit confusion or a lower than normal body temperature.
+
+ </li>
+ 
+</ul>
+
+
+ </p>
+  <h4 id="one" class="text-danger">Causes</h4>
+  <p class="text-white">Many germs can cause pneumonia. The most common are bacteria and viruses in the air we breathe. Your body usually prevents these germs from infecting your lungs. But sometimes these germs can overpower your immune system, even if your health is generally good.</p>
+  <h4 id="two" class="text-danger">Risk Factor</h4>
+  <p class="text-white">
+  
+  <p class="text-white" >Pneumonia can affect anyone. But the two age groups at highest risk are:</p>
+ <ul>
+  <li class="text-white">Children who are 2 years old or younger</li>
+  <li class="text-white">People who are age 65 or older.</li>
+
+ 
+</ul>
+
+
+</p>
+  
+</div>
+</div>
+
+<!----------------space------->
+  <div id="sectionadv">
+<div class="container text-center snd2s">
+      <h2>ADVICE</h2>
+      
+
+    </div>
+ 
+
+
+
+<!-------------end--------->
+
+<div class="card mb-3 mx-auto mg-crd bg-dark" style="max-width: 1000px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="static/Normal.jpeg" class="card-img" alt="nm">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title font-weight-bold text-warning">FOR BETTER RESULT</h5>
+        <p class="card-text text-white font-weight-bold">To get accurate and better result upload your chest x-ray image like this and do not take image vetically or horizontly rotated.</p>
+        <p class="card-text text-info"><small class="text-muted">Note: photo should not blurred.</small></p>
+        <p class="card-text text-info"><small class="text-white">To test our model you can download images from below link:</small></p>
+        <a target="_blank" href="https://drive.google.com/drive/folders/1LeMLKsBJ_SkyicABPqkJ_7o_yi-3oLsu?usp=sharing">here</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endif %}  
+         
+         {% if prediction=='PNEUMONIA' %}
+         
+         
+         <div class="card mb-3 mx-auto mg-crd bg-dark" style="max-width: 1000px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img id="blah" src="static/logo.png" alt="pnhhds">
+      
+            
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title font-weight-bold text-danger">Chances Of {{prediction}}:</h5>
+        <p class="card-text text-white font-weight-bold">Dear User, Our Machine found a similar structure of chest x-ray pneumonia in your uploaded x-ray image and you have higher chances of getting infected from PNEUMONIA
+          . we suggest you to please get a appointment with your doctor as soon.</p>
+        <p class="card-text text-info"><small class="text-muted">Note: Though our deep-learning model had been trained on large
+        no of x-ray images of both PNEUMONIA as well as NORMAL images.And having a accuracy of 90 %. but still it may predict wrong. so this is not the fianl report. The result may be varaying.
+        </small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+         
+                 
+         {% endif %} 
+         
+         {% if prediction=='NORMAL' %}
+         
+         
+         <div class="card mb-3 mx-auto mg-crd bg-dark" style="max-width: 1000px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img id="blah" src="static/logo.png"
+            alt="dhbhbxnnj">
+           
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title font-weight-bold text-success">Your X-Ray is {{prediction}}:</h5>
+        <p class="card-text text-white font-weight-bold">Dear User, Our Machine predicts your xray as normal class. It may wrong. so dont trust it fully.</p>
+        <p class="card-text text-info"><small class="text-muted">Note: Though our deep-learning model had been trained on large
+        no of x-ray images of both PNEUMONIA as well as NORMAL images.And having a accuracy of 90 %. but still it may predict wrong. so this is not the fianl report. The result may be varaying.
+        </small></p>
+      </div>
+    </div>
+  </div>
+</div>
+         
+                 
+         {% endif %} 
+         
+         
+       
+     
+      
+        
+ 
+
+
+
+
+<!----out of hero image---->
+<div id="sectionprd">
+<div class="container text-center snd2s">
+      <h2>PREDICT</h2>
+      <p>Upload your chest X-RAY image to check PNEUMONIA</p>
+
+    </div>
+ 
+    
+<!-----uploading section------>
+<section class=" text-center ">
+       <div class="row">
+       
+    
+
+      <div class="col-sm-12 col-md-6 col-lg-6 ">
+        <div class="z-depth-1-half mb-4">
+          <img id="blah" src="static/logo.png"
+            alt="example placeholder">
+        </div>
+      </div>
+      
+       <div class="col-sm-12 col-md-6 col-lg-6">
+       
+      <form action="/predict" method="post" enctype="multipart/form-data" style="margin-top: 50px; width: 60%; text-align: center; margin: auto;" onsubmit="showloading()">
+   <div class="file-field">
+     <div class="d-flex justify-content-center">
+       <div class="btn btn-mdb-color btn-rounded float-left">
+         <span>Choose file</span>
+         <input type="file" name="image" onchange="readURL(this)">
+         <span class="text-right">
+          <input type="submit" value="Predict" class="btn btn-primary">
+        </span>
+       </div>
+     </div>
+   </div>
+  </form>
+       
+       
+        
+      </div>
+      
+      
+      
+      </div>
+      </div>
+      
+    </section>
+    
+ <!----------contact us section----------->
+
+
+<!-------footer----->
+   <!-- Footer -->
+
+<!-- Footer -->
+ <div id="sectioncon" class="bg-dark">
+
+  <footer class="mainfooter" role="contentinfo">
+  <div class="footer-middle">
+  <div class="container">
+    <div class="row">
+      
+        <!--Column1-->
+        
+    	<div class="col-12 text-center">
+    		<h4>Follow Us</h4>
+            <ul class="social-network social-circle">
+             <li><a target="_blank" href="https://www.facebook.com/mihir.mishra.351/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+             <li><a target="_blank" href="https://www.linkedin.com/in/mrinal-chandra-mishra-4796671a7/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+              <li><a target="_blank" href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter-square"></i></a></li>
+            <li><a target="_blank" href="https://github.com/mrinal4066/" class="icoGithub" title="Github"><i class="fa fa-github"></i></a></li>
+           
+           
+            </ul>				
+		</div>
+            
+            
+            
+		
+
+    </div>
+	<div class="row">
+		<div class="col-md-12 copy mg">
+			<p class="text-center">&copy; Copyright 2020 - pndetector.in.  All rights reserved.</p>
+		</div>
+	</div>
+
+
+  </div>
+  </div>
+</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript">
+     function readURL(input) {
+       if (input.files && input.files[0]) {
+           var reader = new FileReader();
+
+           reader.onload = function (e) {
+               $('#blah')
+                   .attr('src', e.target.result);
+           };
+
+           reader.readAsDataURL(input.files[0]);
+       }
+   }
+
+     </script>
+     
+</body>
+</html>
